@@ -8,6 +8,10 @@ $(document).ready(function() {
   success: renderMultipleExhibitions
   });
 
+
+  // $('.deleteBtn').on('click', handleDeleteClick);
+  // $('#exhibitions').on('click', '.editBtn', handleEditClick);
+
 });
 
 function renderMultipleExhibitions(exhibitions) {
@@ -16,20 +20,34 @@ function renderMultipleExhibitions(exhibitions) {
   });
 }
 
+// function handleDeleteClick(e) {
+
+// }
+
+// // callback after DELETE /api/exhibitions/:id
+// function handleDeleteSuccess(data) {
+//   var deletedExhbitionId = data._id;
+//   console.log('removing the following exhibition from the page:', deletedExhbitionId);
+//   $('[data-exhibition-id=' + deletedExhbitionId + ']').remove();
+// }
+
+
 // this function takes one exhibition and renders it to the page
 function renderExhibition(exhibition) {
   console.log('rendering exhibition', exhibition);
 
   var exhibitionHtml = (`
-    <div class="row exhibition">
+
+    <!-- one exhibition -->
+    <div class='row exhibition' data-exhibition-id='${exhibition._id}'>
 
       <div class="col-md-10 col-md-offset-1">
         <div class="panel-heading">
           <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default">
+            <button type="button" class="btn btn-default deleteBtn">
               <span class='glyphicon glyphicon-remove aria-hidden="true'></span>
             </button>
-            <button type="button" class="btn btn-default">
+            <button type="button" class="btn btn-default editBtn">
               <span class='glyphicon glyphicon glyphicon-pencil aria-hidden="true'></span>
             </button>
           </div>
@@ -45,27 +63,22 @@ function renderExhibition(exhibition) {
               <div class="col-md-9 col-xs-12">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <h4 class='inline-header'>Title :</h4>
                     <span class='exhibition-title'>${exhibition.title}</span>
                   </li>
 
                   <li class="list-group-item">
-                    <h4 class='inline-header'>Artist Name :</h4>
                     <span class='artist-name'>${exhibition.artistName}</span>
                   </li>
 
                   <li class="list-group-item">
-                    <h4 class='inline-header'>Location :</h4>
                     <span class='exhibition-location'>${exhibition.location}</span>
                   </li>
 
                   <li class="list-group-item">
-                    <h4 class='inline-header'>Exhibition Dates :</h4>
                     <span class='exhibition-dates'>${exhibition.exhibitionDates}</span>
                   </li>
 
                   <li class="list-group-item">
-                    <h4 class='inline-header'>Website :</h4>
                     <span class='exhibition-website'>${exhibition.website}</span>
                   </li>
 

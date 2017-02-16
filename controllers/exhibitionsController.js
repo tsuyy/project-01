@@ -26,12 +26,18 @@ function create(req, res) {
 
 // GET /api/exhibitions/:exhibitionId
 function show(req, res) {
-  // find one album by id and send it back as JSON
-}
+  // find one exhibition by id and send it back as JSON
+  db.Exhibition.findById(req.params.exhibitionId, function(err, foundExhibition) {
+    if(err) { console.log('albumsController.show error', err); }
+    console.log('exhibitionController.show responding with', foundExhibition);
+    res.json(foundExhibition);
+  });}
 
 // DELETE /api/exhibitions/:exhibitionId
 function destroy(req, res) {
-  // find one album by id, delete it, and send it back as JSON
+  db.Exhibition.findOneAndRemove({ _id: req.params.exhibitionId }, function(err, foundExhibition){
+    res.json(foundExhibition);
+  });
 }
 
 // PUT or PATCH /api/exhibitions/:exhibitionId
