@@ -5,12 +5,12 @@ $(document).ready(function() {
   $.ajax({
   method: 'GET',
   url: '/api/exhibitions',
-  success: renderMultipleExhibitions
+  success: renderAllExhibitions
   });
 
 });
 
-function renderMultipleExhibitions(exhibitions) {
+function renderAllExhibitions(exhibitions) {
   exhibitions.forEach(function(exhibition) {
     renderExhibition(exhibition);
   });
@@ -18,17 +18,18 @@ function renderMultipleExhibitions(exhibitions) {
 
 function handleDeleteClick(e) {
   var exhibitionId = $(this).parents('.exhibition').data('exhibition-id');
-    console.log('deleting ' + exhibitionId );
-    // $.ajax({
-    //   url: '/api/exhibitions/' + exhibitionId,
-    //   method: 'DELETE',
-    //   success: handleDeleteSuccess
-    // });
+    $.ajax({
+      url: '/api/exhibitions/' + exhibitionId,
+      method: 'DELETE',
+      success: handleDeleteSuccess
+    });
   }
 
 // // callback after DELETE /api/exhibitions/:id
 function handleDeleteSuccess(data) {
-
+  var deletedExhibitionId = data._id;
+  console.log('deleting : ', deletedExhibitionId);
+  $('div[data-exhibition-id=' + deletedExhibitionId + ']').remove();
 }
 
 
