@@ -8,10 +8,6 @@ $(document).ready(function() {
   success: renderMultipleExhibitions
   });
 
-
-  // $('.deleteBtn').on('click', handleDeleteClick);
-  // $('#exhibitions').on('click', '.editBtn', handleEditClick);
-
 });
 
 function renderMultipleExhibitions(exhibitions) {
@@ -20,16 +16,20 @@ function renderMultipleExhibitions(exhibitions) {
   });
 }
 
-// function handleDeleteClick(e) {
-
-// }
+function handleDeleteClick(e) {
+  var exhibitionId = $(this).parents('.exhibition').data('exhibition-id');
+    console.log('deleting ' + exhibitionId );
+    // $.ajax({
+    //   url: '/api/exhibitions/' + exhibitionId,
+    //   method: 'DELETE',
+    //   success: handleDeleteSuccess
+    // });
+  }
 
 // // callback after DELETE /api/exhibitions/:id
-// function handleDeleteSuccess(data) {
-//   var deletedExhbitionId = data._id;
-//   console.log('removing the following exhibition from the page:', deletedExhbitionId);
-//   $('[data-exhibition-id=' + deletedExhbitionId + ']').remove();
-// }
+function handleDeleteSuccess(data) {
+
+}
 
 
 // this function takes one exhibition and renders it to the page
@@ -57,7 +57,7 @@ function renderExhibition(exhibition) {
           <!-- begin exhibition internal row -->
             <div class='row'>
               <div class="col-md-3 col-xs-12 thumbnail exhibition-thumb">
-                <img src="" alt="exhibition image">
+                <img src="http://im.altervista.org/alterpages/img-default.png" alt="exhibition image">
               </div>
 
               <div class="col-md-9 col-xs-12">
@@ -94,5 +94,9 @@ function renderExhibition(exhibition) {
     </div>
     <!-- end one exhibition -->
   `);
+
   $('#exhibitions').prepend(exhibitionHtml);
+  $('.deleteBtn').on('click', handleDeleteClick);
+  // $('#exhibitions').on('click', '.editBtn', handleEditClick);
+
 }
