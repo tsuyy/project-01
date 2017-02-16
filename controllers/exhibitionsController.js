@@ -7,9 +7,9 @@ var db = require('../models');
 // GET /api/exhibitions
 function index(req, res) {
   // send back all exhibitions as JSON
-  // db.Exhibition.find({}, function(err, allExhbitions) {
-  //   res.json(allExhbitions);
-  // });
+  db.Exhibition.find({}, function(err, allExhbitions) {
+    res.json(allExhbitions);
+  });
 }
 
 // POST /api/exhibitions

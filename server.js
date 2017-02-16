@@ -32,9 +32,9 @@ app.get('/', function homepage (req, res) {
  */
 
 app.get('/api', controllers.api.index);
-//
-// app.get('/api/exhibitions', controllers.exhibitions.index);
-//
+
+app.get('/api/exhibitions', controllers.exhibitions.index);
+
 // app.post('/api/exhibitions', controllers.exhibitions.create);
 
 /**********
