@@ -41,7 +41,7 @@
       <div class="row">
         <div class="col-md-10 col-md-offset-1">
 
-          <form class="form-horizontal">
+          <form class="form-horizontal" method='POST' action='/api/exhibitions'>
             <fieldset>
 
               <!-- Form Name -->
@@ -60,7 +60,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label">title</label>
                 <div class="col-md-4">
-                  <input id="title" type="text" class="form-control input-md" required="">
+                  <input name="title" type="text" class="form-control input-md" required="">
                 </div>
               </div>
 
@@ -68,7 +68,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label">artist name</label>
                 <div class="col-md-4">
-                  <input id="artist-name" type="text" class="form-control input-md" required="">
+                  <input name="artistName" type="text" class="form-control input-md" required="">
                 </div>
               </div>
 
@@ -76,7 +76,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label">location</label>
                <div class="col-md-4">
-               <input id="location" type="text" placeholder="MoMA, San Francisco" class="form-control input-md" required="">
+               <input name="location" type="text" placeholder="MoMA, San Francisco" class="form-control input-md" required="">
 
                </div>
              </div>
@@ -85,7 +85,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label">exhibition dates</label>
                <div class="col-md-4">
-                 <input id="exhibition-dates" type="text" placeholder="" class="form-control input-md" required="">
+                 <input name="exhibitionDates" type="text" placeholder="" class="form-control input-md" required="">
                </div>
              </div>
 
@@ -93,7 +93,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label">website</label>
                <div class="col-md-4">
-                 <input id="website" type="text" placeholder="" class="form-control input-md" required="">
+                 <input name="website" type="text" placeholder="" class="form-control input-md" required="">
                </div>
              </div>
 

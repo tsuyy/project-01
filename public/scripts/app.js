@@ -8,13 +8,14 @@ $(document).ready(function() {
   success: renderAllExhibitions
   });
 
-  $('#exhibition-form form').on('click', '.addBtn', function(e) {
+  $('#exhibition-form form').on('submit', function(e) {
     e.preventDefault();
     var formData = $(this).serialize();
     console.log('formData', formData);
     $.ajax({
       method: 'POST',
       url: '/api/exhibitions',
+      data: formData,
       success: renderExhibition
     });
 
@@ -76,7 +77,7 @@ function handleEditClick(e) {
 // after editing an exhibition, when the save changes button is clicked
 function handleSaveChangesClick(e) {
   console.log("e is",e.target);
-  var exhibitionId = $('.saveBtn').closest('.exhibition').data('exhibition-id');
+  var exhibitionId = $('.saveBtn').closest('div.row.exhibition').data('exhibition-id');
   var $exhibitionRow = $('[data-exhibition-id=' + exhibitionId + ']');
 
   var data = {
@@ -87,6 +88,8 @@ function handleSaveChangesClick(e) {
     exhibitionDates: $exhibitionRow.find('.exhibition-dates').val()
 
   };
+
+  console.log('PUTing data for exhibition', exhibitionId, 'with data', data);
 
   $.ajax({
     method: 'PUT',
