@@ -16,8 +16,6 @@ function index(req, res) {
 function create(req, res) {
   // create an album based on request body and send it back as JSON
   console.log('body', req.body);
-  // var genres = req.body.genres.split(',').map(function(item) { return item.trim(); } );
-  // req.body.genres = genres;
 
   db.Exhibition.create(req.body, function(err, exhibition) {
     if (err) { console.log('error', err); }

@@ -8,14 +8,16 @@ $(document).ready(function() {
   success: renderAllExhibitions
   });
 
-  $('#exhibition-form form').on('submit', '.addBtn', function(e) {
+  $('#exhibition-form form').on('click', '.addBtn', function(e) {
     e.preventDefault();
     var formData = $(this).serialize();
     console.log('formData', formData);
-    $.post('/api/exhibitions', formData, function(e) {
-      console.log('exhibition after POST', exhibition);
-      renderExhition(exhibition);  //render the server's response
+    $.ajax({
+      method: 'POST',
+      url: '/api/exhibitions',
+      success: renderExhibition
     });
+
     $(this).trigger("reset");
   });
 
@@ -44,23 +46,69 @@ function handleDeleteSuccess(data) {
 }
 
 // when the edit button for an exhibition is clicked
-// function handleEditClick(e) {
-//   var $exhibitionRow = $(this).closest('.exhibition');
-//   var exhibitionId = $exhibitionRow.data('exhibition-id');
-//   console.log('edit exhibition', exhibitionId);
-//
-//   // get the album name and replace its field with an input element
-//   var exhibitionName = $exhibitionRow.find('span.exhibition-name').text();
-//   $exhibitionRow.find('span.exhibition-name').html('<input class="edit-album-name" value="' + albumName + '"></input>');
-//
-//   // get the artist name and replace its field with an input element
-//   var artistName = $albumRow.find('span.artist-name').text();
-//   $albumRow.find('span.artist-name').html('<input class="edit-artist-name" value="' + artistName + '"></input>');
-//
-//   // get the releasedate and replace its field with an input element
-//   var releaseDate = $albumRow.find('span.album-releaseDate').text();
-//   $albumRow.find('span.album-releaseDate').html('<input class="edit-album-releaseDate" value="' + releaseDate + '"></input>');
-// }
+function handleEditClick(e) {
+  var $exhibitionRow = $(this).closest('.exhibition');
+  var exhibitionId = $exhibitionRow.data('exhibition-id');
+  console.log('edit exhibition', exhibitionId);
+  //
+  // // show the save changes button
+  // $exhibitionRow.find('.saveBtn').toggleClass('hidden');
+  // // hide the edit button
+  // $exhibitionRow.find('.editBtn').toggleClass('hidden');
+
+  // get exhibition title and replace its field with an input element
+  var title = $exhibitionRow.find('span.title').text();
+  $exhibitionRow.find('span.exhibition-title').html('<input value="' + title + '"></input>');
+
+  // get the artist name and replace its field with an input element
+  var artistName = $exhibitionRow.find('span.artist-name').text();
+  $exhibitionRow.find('span.artist-name').html('<input value="' + artistName + '"></input>');
+
+  // get the location and replace its field with an input element
+  var location = $exhibitionRow.find('span.exhibition-location').text();
+  $exhibitionRow.find('span.exhibition-location').html('<input value="' + location + '"></input>');
+
+  // get the exhibition dates and replace its field with an input element
+  var exhibitionDates = $exhibitionRow.find('span.exhibition-dates').text();
+  $exhibitionRow.find('span.exhibition-dates').html('<input value="' + exhibitionDates + '"></input>');
+
+  // get website and replace its field with an input element
+  var website = $exhibitionRow.find('span.website').text();
+  $exhibitionRow.find('span.website').html('<input value="' + website + '"></input>');
+
+}
+
+// after editing an exhibition, when the save changes button is clicked
+function handleSaveChangesClick(e) {
+  var exhibitionId = $(this).parents('.exhibition').data('exhibition-id');
+  var $exhibitionRow = $('[data-exhibition-id=' + exhibitionId + ']');
+
+  var data = {
+    title: $exhibitionRow.find('.exhibition-title').val(),
+    artistName: $exhibitionRow.find('.artist-name').val(),
+    website: $exhibitionRow.find('.website').val(),
+    location: $exhibitionRow.find('.exhibition-location').val(),
+    exhibitionDates: $exhibitionRow.find('.exhibition-dates').val()
+
+  };
+
+  console.log('PUTing data for exhibition', exhibitionId, 'with data', data);
+
+  $.ajax({
+    method: 'PUT',
+    url: '/api/exhibitions/' + exhibitionId,
+    data: data,
+    success: handleUpdatedResponse
+  });
+}
+
+function handleUpdatedResponse(data) {
+  console.log('response to update', data);
+
+  var exhibitionId = data._id;
+  $('[data-exhibition-id=' + exhibitionId + ']').remove();
+  renderExhibition(data);
+}
 
 
 // this function takes one exhibition and renders it to the page
@@ -75,12 +123,17 @@ function renderExhibition(exhibition) {
       <div class="col-md-10 col-md-offset-1">
         <div class="panel-heading">
           <div class="btn-group" role="group" aria-label="...">
+
             <button type="button" class="btn btn-default deleteBtn">
               <span class='glyphicon glyphicon-remove aria-hidden="true'></span>
             </button>
             <button type="button" class="btn btn-default editBtn">
               <span class='glyphicon glyphicon glyphicon-pencil aria-hidden="true'></span>
             </button>
+            <button type="button" class="btn btn-default saveBtn">
+              <span class='glyphicon glyphicon glyphicon-save' ></span>
+            </button>
+
           </div>
         </div>
         <div class="panel-body">
@@ -128,6 +181,8 @@ function renderExhibition(exhibition) {
 
   $('#exhibitions').prepend(exhibitionHtml);
   $('.deleteBtn').on('click', handleDeleteClick);
-  // $('#exhibitions').on('click', '.editBtn', handleEditClick);
+  $('.editBtn').on('click', handleEditClick);
+  $('.saveBtn').on('click', handleSaveChangesClick);
+
 
 }
