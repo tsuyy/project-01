@@ -7,7 +7,7 @@ var exhibitionList =[
     artistName: 'teamLab',
     location: 'PACE Gallery, London',
     // description: '',
-    exhibitionDates: 'January 25 - March 11, 2017',
+    exhibitionDates: 'Jan 25 - Mar 11, 2017',
     website: 'http://pacelondon.team-lab.net/'
   //   images: [
   //     'http://www.studiointernational.com/images/articles/t/teamlab-2017/5.jpg',
@@ -23,8 +23,8 @@ var exhibitionList =[
     artistName: 'James Turrell',
     location: 'The Long Museum, Shanghai',
     // description: '',
-    exhibitionDates: 'January 22 - May 21, 2017',
-    website: 'http://jamesturrell.com/'
+    exhibitionDates: 'Jan 22 - May 21, 2017',
+    website: 'http://www.pacegallery.com/artists/473/james-turrell'
   //   images: [
   //     'https://s-media-cache-ak0.pinimg.com/originals/40/e5/09/40e509eececd8b18cbdcf51d8a782f94.jpg',
   //     'http://p.ledinside.com/led/2013-09/1380081913_25169.jpg',
@@ -32,38 +32,38 @@ var exhibitionList =[
   //     'http://nga.gov.au/AboutUs/MediaCentre/Turrell/Images/print/20141210nga2383_0008.jpg'
   //  ],
   //  videoLink: 'https://www.youtube.com/watch?v=h3wrrlu6a4k'
+  },
+
+  {
+    title: 'Rain Room',
+    artistName: 'Random International',
+    location: 'LACMA, Los Angeles',
+    // description: String,
+    exhibitionDates: 'Nov 1, 2015 - Jan 22, 2017',
+    website: 'http://random-international.com/work/rainroom/'
+    // images: [ String ]
+  },
+
+  {
+    title: 'Infinity Mirrored Room',
+    artistName: 'Yayoi Kusama',
+    location: 'The Broad, Los Angeles',
+    // description: String,
+    exhibitionDates: 'Oct 2017 - Jan 2018',
+    website: 'http://thebroad.org/art/special-exhibitions/yayoi-kusama-infinity-mirrors'
+    // images: [ String ]
+  },
+
+  {
+    title: 'Crystal Universe',
+    artistName: 'teamLab',
+    location: 'Pola Museum, Ginza JP',
+    // description: String,
+    exhibitionDates: 'Jul 16 - Aug 31, 2016',
+    website: 'https://random-international.com/'
+    // images: [ String ]
+    
   }
-
-  // {
-  //   title: 'Rain Room',
-  //   artist: 'Random International',
-  //   locations: 'LACMA, Los Angeles',
-  //   description: String,
-  //   exhibitionDates: String,
-  //   website: String,
-  //   images: [ String ]
-  // },
-
-  // {
-  //   title: String,
-  //   artist: String,
-  //   locations: String,
-  //   description: String,
-  //   exhibitionDates: String,
-  //   website: String,
-  //   images: [ String ]
-  // },
-
-  // {
-  //   title: String,
-  //   artist: String,
-  //   locations: String,
-  //   description: String,
-  //   exhibitionDates: String,
-  //   website: String,
-  //   images: [ String ],
-  //   videoLink: ''
-  // }
 ];
 
 

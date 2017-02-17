@@ -73,8 +73,9 @@ function handleEditClick(e) {
   html('<input class="edit-exhibition-dates" value="' + exhibitionDates + '" placeholder="Exhibition Dates"></input>');
 
   // get website and replace its field with an input element
-  var website = $exhibitionRow.find('span.exhibition-website').text();
-  $exhibitionRow.find('span.edit-website').html('<input value="' + website + '" placeholder="URL"></input>');
+  var website = $exhibitionRow.find('span.website').text();
+  $exhibitionRow.find('span.edit-website').
+  html('<input class="edit-website" value="' + website + '" placeholder="URL"></input>');
 
 }
 
@@ -161,7 +162,7 @@ function renderExhibition(exhibition) {
                   </li>
 
                   <li class="list-group-item">
-                    <span class='exhibition-website'>${exhibition.website}</span>
+                    <span class='website'>${exhibition.website}</span>
                   </li>
 
                 </ul>

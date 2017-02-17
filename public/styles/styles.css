@@ -1,8 +1,8 @@
-.page-top {
-  height: 900px!important;
+.page-top, .video {
+  height: 900px;
 }
 
-.h1 {
-  padding-top: 170px!important;
-  font-size: 150px!important;
+h1.text-center {
+  padding-top: 170px;
+  font-size: 160px;
 }
