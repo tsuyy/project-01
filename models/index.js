@@ -1,5 +1,5 @@
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost/immersive-exhibitions");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/immersive-exhibitions");
 
 var Exhibition = require('./exhibition');
 
