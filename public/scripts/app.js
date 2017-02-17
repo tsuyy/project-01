@@ -54,23 +54,27 @@ function handleEditClick(e) {
 
   // get exhibition title and replace its field with an input element
   var title = $exhibitionRow.find('span.exhibition-title').text();
-  $exhibitionRow.find('span.exhibition-title').html('<input value="' + title + '" placeholder="Title"></input>');
+  $exhibitionRow.find('span.exhibition-title').
+  html('<input class="edit-exhibition-title" value="' + title + '" placeholder="Title"></input>');
 
   // get the artist name and replace its field with an input element
   var artistName = $exhibitionRow.find('span.artist-name').text();
-  $exhibitionRow.find('span.artist-name').html('<input value="' + artistName + '" placeholder="Artist"></input>');
+  $exhibitionRow.find('span.artist-name').
+  html('<input class="edit-artist-name" value="' + artistName + '" placeholder="Artist"></input>');
 
   // get the location and replace its field with an input element
   var location = $exhibitionRow.find('span.exhibition-location').text();
-  $exhibitionRow.find('span.exhibition-location').html('<input value="' + location + '" placeholder="Museum, City"></input>');
+  $exhibitionRow.find('span.exhibition-location').
+  html('<input class="edit-exhibition-location" value="' + location + '" placeholder="Museum, City"></input>');
 
   // get the exhibition dates and replace its field with an input element
   var exhibitionDates = $exhibitionRow.find('span.exhibition-dates').text();
-  $exhibitionRow.find('span.exhibition-dates').html('<input value="' + exhibitionDates + '" placeholder="Exhibition Dates"></input>');
+  $exhibitionRow.find('span.exhibition-dates').
+  html('<input class="edit-exhibition-dates" value="' + exhibitionDates + '" placeholder="Exhibition Dates"></input>');
 
   // get website and replace its field with an input element
   var website = $exhibitionRow.find('span.exhibition-website').text();
-  $exhibitionRow.find('span.exhibition-website').html('<input value="' + website + '" placeholder="URL"></input>');
+  $exhibitionRow.find('span.edit-website').html('<input value="' + website + '" placeholder="URL"></input>');
 
 }
 
@@ -81,11 +85,11 @@ function handleSaveChangesClick(e) {
   var $exhibitionRow = $('[data-exhibition-id=' + exhibitionId + ']');
 
   var data = {
-    title: $exhibitionRow.find('.exhibition-title').val(),
-    artistName: $exhibitionRow.find('.artist-name').val(),
-    website: $exhibitionRow.find('.website').val(),
-    location: $exhibitionRow.find('.exhibition-location').val(),
-    exhibitionDates: $exhibitionRow.find('.exhibition-dates').val()
+    title: $exhibitionRow.find('.edit-exhibition-title').val(),
+    artistName: $exhibitionRow.find('.edit-artist-name').val(),
+    website: $exhibitionRow.find('.edit-website').val(),
+    location: $exhibitionRow.find('.edit-exhibition-location').val(),
+    exhibitionDates: $exhibitionRow.find('.edit-exhibition-dates').val()
 
   };
 
