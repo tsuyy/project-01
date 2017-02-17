@@ -20,18 +20,21 @@
   </head>
   <body>
 
-    <h1 class='text-center'>IMMERSIVE EXHIBITIONS</h1>
-
-    <section class="container">
+    <section class="container page-top">
       <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-          <h2>exhibitions</h2>
+        <div class="col-md-12">
+          <h1 class='text-center'>IMMERSIVE EXHIBITIONS</h1>
         </div>
       </div>
-
-      <!-- exhibitions container! -->
-      <div id='exhibitions'></div>
     </section>
+
+    <!-- exhibitions archive section-->
+    <section class='container exhibition-archives'>
+      <div class='row'>
+        <div class='col-md-10 col-md-offset-1'>
+          <legend>exhibition archives</legend>
+            <div id='exhibitions'></div>
+    </div>
 
     <!-- add new exhibition form! -->
     <section id='exhibition-form' class="container">
@@ -43,11 +46,11 @@
 
               <!-- Form Name -->
               <legend>add new exhibition</legend>
-              
+
               <!-- Button -->
               <div class="form-group">
                 <div class="col-md-4">
-                  <button class="btn btn-default addBtn">
+                  <button type='submit' class="btn btn-default addBtn">
                     <span class='glyphicon glyphicon-plus' aria-hidden='true'></span>
                   </button>
                 </div>
@@ -57,7 +60,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label">title</label>
                 <div class="col-md-4">
-                  <input id="title" type="text" placeholder="" class="form-control input-md" required="">
+                  <input id="title" type="text" class="form-control input-md" required="">
                 </div>
               </div>
 
@@ -65,7 +68,7 @@
               <div class="form-group">
                 <label class="col-md-4 control-label">artist name</label>
                 <div class="col-md-4">
-                  <input id="artist-name" type="text" placeholder="" class="form-control input-md">
+                  <input id="artist-name" type="text" class="form-control input-md" required="">
                 </div>
               </div>
 
@@ -73,7 +76,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label">location</label>
                <div class="col-md-4">
-               <input id="location" type="text" placeholder="MoMA, San Francisco" class="form-control input-md">
+               <input id="location" type="text" placeholder="MoMA, San Francisco" class="form-control input-md" required="">
 
                </div>
              </div>
@@ -82,7 +85,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label">exhibition dates</label>
                <div class="col-md-4">
-                 <input id="exhibition-dates" type="text" placeholder="" class="form-control input-md">
+                 <input id="exhibition-dates" type="text" placeholder="" class="form-control input-md" required="">
                </div>
              </div>
 
@@ -90,7 +93,7 @@
              <div class="form-group">
                <label class="col-md-4 control-label">website</label>
                <div class="col-md-4">
-                 <input id="website" type="text" placeholder="" class="form-control input-md">
+                 <input id="website" type="text" placeholder="" class="form-control input-md" required="">
                </div>
              </div>
 

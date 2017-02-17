@@ -1,5 +1,8 @@
-.inline-header {
-  display: inline-block;
-  vertical-align: baseline;
-  margin-right: 12px;
+.page-top {
+  height: 900px!important;
+}
+
+.h1 {
+  padding-top: 170px!important;
+  font-size: 150px!important;
 }

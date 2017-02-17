@@ -47,40 +47,36 @@ function handleDeleteSuccess(data) {
 
 // when the edit button for an exhibition is clicked
 function handleEditClick(e) {
-  var $exhibitionRow = $(this).closest('.exhibition');
+  var $exhibitionRow = $(this).closest('div.row.exhibition');
   var exhibitionId = $exhibitionRow.data('exhibition-id');
   console.log('edit exhibition', exhibitionId);
-  //
-  // // show the save changes button
-  // $exhibitionRow.find('.saveBtn').toggleClass('hidden');
-  // // hide the edit button
-  // $exhibitionRow.find('.editBtn').toggleClass('hidden');
 
   // get exhibition title and replace its field with an input element
-  var title = $exhibitionRow.find('span.title').text();
-  $exhibitionRow.find('span.exhibition-title').html('<input value="' + title + '"></input>');
+  var title = $exhibitionRow.find('span.exhibition-title').text();
+  $exhibitionRow.find('span.exhibition-title').html('<input value="' + title + '" placeholder="Title"></input>');
 
   // get the artist name and replace its field with an input element
   var artistName = $exhibitionRow.find('span.artist-name').text();
-  $exhibitionRow.find('span.artist-name').html('<input value="' + artistName + '"></input>');
+  $exhibitionRow.find('span.artist-name').html('<input value="' + artistName + '" placeholder="Artist"></input>');
 
   // get the location and replace its field with an input element
   var location = $exhibitionRow.find('span.exhibition-location').text();
-  $exhibitionRow.find('span.exhibition-location').html('<input value="' + location + '"></input>');
+  $exhibitionRow.find('span.exhibition-location').html('<input value="' + location + '" placeholder="Museum, City"></input>');
 
   // get the exhibition dates and replace its field with an input element
   var exhibitionDates = $exhibitionRow.find('span.exhibition-dates').text();
-  $exhibitionRow.find('span.exhibition-dates').html('<input value="' + exhibitionDates + '"></input>');
+  $exhibitionRow.find('span.exhibition-dates').html('<input value="' + exhibitionDates + '" placeholder="Exhibition Dates"></input>');
 
   // get website and replace its field with an input element
-  var website = $exhibitionRow.find('span.website').text();
-  $exhibitionRow.find('span.website').html('<input value="' + website + '"></input>');
+  var website = $exhibitionRow.find('span.exhibition-website').text();
+  $exhibitionRow.find('span.exhibition-website').html('<input value="' + website + '" placeholder="URL"></input>');
 
 }
 
 // after editing an exhibition, when the save changes button is clicked
 function handleSaveChangesClick(e) {
-  var exhibitionId = $(this).parents('.exhibition').data('exhibition-id');
+  console.log("e is",e.target);
+  var exhibitionId = $('.saveBtn').closest('.exhibition').data('exhibition-id');
   var $exhibitionRow = $('[data-exhibition-id=' + exhibitionId + ']');
 
   var data = {
@@ -91,8 +87,6 @@ function handleSaveChangesClick(e) {
     exhibitionDates: $exhibitionRow.find('.exhibition-dates').val()
 
   };
-
-  console.log('PUTing data for exhibition', exhibitionId, 'with data', data);
 
   $.ajax({
     method: 'PUT',
@@ -123,19 +117,16 @@ function renderExhibition(exhibition) {
       <div class="col-md-10 col-md-offset-1">
         <div class="panel-heading">
           <div class="btn-group" role="group" aria-label="...">
-
             <button type="button" class="btn btn-default deleteBtn">
               <span class='glyphicon glyphicon-remove aria-hidden="true'></span>
             </button>
             <button type="button" class="btn btn-default editBtn">
               <span class='glyphicon glyphicon glyphicon-pencil aria-hidden="true'></span>
             </button>
-            <button type="button" class="btn btn-default saveBtn">
-              <span class='glyphicon glyphicon glyphicon-save' ></span>
-            </button>
-
+            <button type="submit" class="btn btn-default saveBtn">🔘</button>
           </div>
         </div>
+
         <div class="panel-body">
 
           <!-- begin exhibition internal row -->

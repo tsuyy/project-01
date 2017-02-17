@@ -39,8 +39,6 @@ app.delete('/api/exhibitions/:exhibitionId', controllers.exhibitions.destroy);
 app.put('/api/exhibitions/:exhibitionId', controllers.exhibitions.update);
 
 
-
-
 // app.post('/api/exhibitions', controllers.exhibitions.create);
 
 /**********
