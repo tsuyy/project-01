@@ -14,14 +14,16 @@ function index(req, res) {
 
 // POST /api/exhibitions
 function create(req, res) {
-  // var newAlbum = req.body;
-  // var genres = req.body.genres.split(',').map(function(item) {
-  //   return item.trim();
-  // });
+  // create an album based on request body and send it back as JSON
+  console.log('body', req.body);
+  // var genres = req.body.genres.split(',').map(function(item) { return item.trim(); } );
   // req.body.genres = genres;
-  // db.Album.create(newAlbum, function(err, newAlbum) {
-  //   res.json(newAlbum);
-  // });
+
+  db.Exhibition.create(req.body, function(err, exhibition) {
+    if (err) { console.log('error', err); }
+    console.log(exhibition);
+    res.json(exhibition);
+  });
 }
 
 // GET /api/exhibitions/:exhibitionId
@@ -42,8 +44,20 @@ function destroy(req, res) {
 
 // PUT or PATCH /api/exhibitions/:exhibitionId
 function update(req, res) {
-  // find one album by id, update it based on request body,
-  // and send it back as JSON
+  // find one exhibition by id, update it based on request body,
+  console.log('updating with data', req.body);
+  db.Exhibition.findById(req.params.exhibitionId, function(err, foundExhibition) {
+    if(err) { console.log('exhibitionsController.update error', err); }
+    foundExhibition.title = req.body.title;
+    foundExhibition.artistName = req.body.artistName;
+    foundExhibition.location = req.body.location;
+    foundExhibition.exhibitionDates = req.body.exhibitionDates;
+    foundExhibition.website = req.body.website;
+    foundExhibition.save(function(err, savedExhibition) {
+      if(err) { console.log('saving altered exhibition failed'); }
+      res.json(savedExhibition);
+    });
+  });
 }
 
 

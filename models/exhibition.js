@@ -5,11 +5,11 @@ var ExhibitionSchema = new Schema({
   title: String,
   artistName: String,
   location: String,
-  description: String,
+  // description: String,
   exhibitionDates: String,
-  website: String,
-  images: [ String ],
-  videoLink : String
+  website: String
+  // images: [ String ],
+  // videoLink : String
 });
 
 var Exhibition = mongoose.model('Exhibition', ExhibitionSchema);

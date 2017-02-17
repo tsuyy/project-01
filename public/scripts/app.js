@@ -8,6 +8,17 @@ $(document).ready(function() {
   success: renderAllExhibitions
   });
 
+  $('#exhibition-form form').on('submit', '.addBtn', function(e) {
+    e.preventDefault();
+    var formData = $(this).serialize();
+    console.log('formData', formData);
+    $.post('/api/exhibitions', formData, function(e) {
+      console.log('exhibition after POST', exhibition);
+      renderExhition(exhibition);  //render the server's response
+    });
+    $(this).trigger("reset");
+  });
+
 });
 
 function renderAllExhibitions(exhibitions) {
@@ -31,6 +42,25 @@ function handleDeleteSuccess(data) {
   console.log('deleting : ', deletedExhibitionId);
   $('div[data-exhibition-id=' + deletedExhibitionId + ']').remove();
 }
+
+// when the edit button for an exhibition is clicked
+// function handleEditClick(e) {
+//   var $exhibitionRow = $(this).closest('.exhibition');
+//   var exhibitionId = $exhibitionRow.data('exhibition-id');
+//   console.log('edit exhibition', exhibitionId);
+//
+//   // get the album name and replace its field with an input element
+//   var exhibitionName = $exhibitionRow.find('span.exhibition-name').text();
+//   $exhibitionRow.find('span.exhibition-name').html('<input class="edit-album-name" value="' + albumName + '"></input>');
+//
+//   // get the artist name and replace its field with an input element
+//   var artistName = $albumRow.find('span.artist-name').text();
+//   $albumRow.find('span.artist-name').html('<input class="edit-artist-name" value="' + artistName + '"></input>');
+//
+//   // get the releasedate and replace its field with an input element
+//   var releaseDate = $albumRow.find('span.album-releaseDate').text();
+//   $albumRow.find('span.album-releaseDate').html('<input class="edit-album-releaseDate" value="' + releaseDate + '"></input>');
+// }
 
 
 // this function takes one exhibition and renders it to the page

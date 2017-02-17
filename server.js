@@ -34,7 +34,10 @@ app.get('/', function homepage (req, res) {
 app.get('/api', controllers.api.index);
 app.get('/api/exhibitions', controllers.exhibitions.index);
 app.get('/api/exhibitions/:exhibitionId', controllers.exhibitions.show);
+app.post('/api/exhibitions', controllers.exhibitions.create);
 app.delete('/api/exhibitions/:exhibitionId', controllers.exhibitions.destroy);
+app.put('/api/exhibitions/:exhibitionId', controllers.exhibitions.update);
+
 
 
 

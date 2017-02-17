@@ -19,7 +19,8 @@
 
   </head>
   <body>
-    <h1 class='text-center'> IMMERSIVE EXHIBITIONS </h1>
+
+    <h1 class='text-center'>IMMERSIVE EXHIBITIONS</h1>
 
     <section class="container">
       <div class="row">
@@ -30,8 +31,110 @@
 
       <!-- exhibitions container! -->
       <div id='exhibitions'></div>
-
     </section>
+
+    <!-- add new exhibition form! -->
+    <section id='exhibition-form' class="container">
+      <div class="row">
+        <div class="col-md-10 col-md-offset-1">
+
+          <form class="form-horizontal">
+            <fieldset>
+
+              <!-- Form Name -->
+              <legend>add new exhibition</legend>
+              <!-- Button -->
+              <div class="form-group">
+                <div class="col-md-4">
+                  <button class="btn btn-default addBtn">
+                    <span class='glyphicon glyphicon-plus' aria-hidden='true'></span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label">title</label>
+                <div class="col-md-4">
+                  <input id="title" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label">artist name</label>
+                <div class="col-md-4">
+                  <input id="artist-name" type="text" placeholder="" class="form-control input-md">
+                </div>
+              </div>
+
+             <!-- Text input-->
+             <div class="form-group">
+               <label class="col-md-4 control-label">location</label>
+               <div class="col-md-4">
+               <input id="location" type="text" placeholder="MoMA, San Francisco" class="form-control input-md">
+
+               </div>
+             </div>
+
+             <!-- Text input -->
+             <div class="form-group">
+               <label class="col-md-4 control-label">exhibition dates</label>
+               <div class="col-md-4">
+                 <input id="exhibition-dates" type="text" placeholder="" class="form-control input-md">
+               </div>
+             </div>
+
+             <!-- Text input -->
+             <div class="form-group">
+               <label class="col-md-4 control-label" for="website">website</label>
+               <div class="col-md-4">
+                 <input id="website" type="text" placeholder="" class="form-control input-md">
+               </div>
+             </div>
+
+           </fieldset>
+         </form>
+       </div>
+     </div>
+   </section>
+
+    <!-- begin songModal: this is not visible until you call .modal() on it -->
+    <div class="modal fade" tabindex="-1" role="dialog" id="addExhibitionModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+            <h4 class="modal-title">add exhibition</h4>
+          </div>
+          <div class="modal-body">
+
+            <fieldset class='form-horizontal'>
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="title">title</label>
+                <div class="col-md-4">
+                  <input id="songName" name="songName" type="text" placeholder="" class="form-control input-md" required="">
+                </div>
+              </div>
+
+              <!-- Text input-->
+              <div class="form-group">
+                <label class="col-md-4 control-label" for="trackNumber">Track Number</label>
+                <div class="col-md-4">
+                  <input id="trackNumber" name="trackNumber" type="text" placeholder="" class="form-control input-md">
+                </div>
+              </div>
+            </fieldset>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" id="saveSong">Save changes</button>
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
   </body>
 </html>
