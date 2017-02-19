@@ -125,13 +125,15 @@ function renderExhibition(exhibition) {
       <div class="col-md-10 col-md-offset-1">
         <div class="panel-heading">
           <div class="btn-group" role="group" aria-label="...">
-            <button type="button" class="btn btn-default deleteBtn">
+            <button type="button" title='delete' class="btn btn-default deleteBtn">
               <span class='glyphicon glyphicon-remove aria-hidden="true'></span>
             </button>
-            <button type="button" class="btn btn-default editBtn">
-              <span class='glyphicon glyphicon glyphicon-pencil aria-hidden="true'></span>
+            <button type="button" title='edit' class="btn btn-default editBtn">
+              <span class='glyphicon glyphicon glyphicon-pencil' aria-hidden='true'></span>
             </button>
-            <button type="submit" class="btn btn-default saveBtn">🔘</button>
+            <button type="submit" title='save' class="btn btn-default saveBtn">
+              <span class='glyphicon glyphicon-ok' aria-hidden='true'></span>
+            </button>
           </div>
         </div>
 

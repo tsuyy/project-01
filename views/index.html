@@ -17,6 +17,9 @@
     <!-- APPLICATION SCRIPTS -->
     <script src="/scripts/app.js"></script>
 
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+
   </head>
   <body>
 
@@ -36,7 +39,7 @@
     <section class='container exhibition-archives'>
       <div class='row'>
         <div class='col-md-10 col-md-offset-1'>
-          <legend>exhibition archives</legend>
+          <img class='img-responsive' src='images/archives.jpg'>
             <div id='exhibitions'></div>
     </div>
 
@@ -48,13 +51,13 @@
           <form class="form-horizontal" method='POST' action='/api/exhibitions'>
             <fieldset>
 
-              <!-- Form Name -->
-              <legend>add new exhibition</legend>
+              <!-- add new  -->
+              <img class='img-responsive' src='images/add-new.jpg'>
 
               <!-- Button -->
               <div class="form-group">
                 <div class="col-md-4">
-                  <button type='submit' class="btn btn-default addBtn">
+                  <button type='submit' title='add' class="btn btn-default addBtn">
                     <span class='glyphicon glyphicon-plus' aria-hidden='true'></span>
                   </button>
                 </div>

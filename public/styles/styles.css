@@ -6,3 +6,34 @@ body {
   height: 900px;
   background-color: #000;
 }
+
+.btn-default {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+}
+
+.btn-default:hover {
+  color: #fff;
+  background-color: #26004d;
+  border-color: #000;
+}
+
+.list-group-item {
+  background-color: #000;
+  color: #fff;
+  border-color: #000;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 18px;
+}
+
+.form-control {
+  background-color: #000;
+  border: 1px solid #2a0051;
+}
+
+label {
+  color: white;
+  font-family: 'Roboto Mono', monospace;
+
+}
