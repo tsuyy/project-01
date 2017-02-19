@@ -15,7 +15,7 @@ body {
 
 .btn-default:hover {
   color: #fff;
-  background-color: #26004d;
+  background-color: #876ce4;
   border-color: #000;
 }
 
@@ -25,6 +25,7 @@ body {
   border-color: #000;
   font-family: 'Roboto Mono', monospace;
   font-size: 17px;
+  padding: 0;
 }
 
 .form-control {
@@ -32,21 +33,26 @@ body {
   border: 1px solid #2a0051;
 }
 
-label {
+label, h3 {
   color: white;
+  text-decoration: none;
   font-family: 'Roboto Mono', monospace;
   font-size: 17px;
 
 }
 
-.exhibition-thumb {
-  border-color: #000;
-  border-radius: 0px
+p {
+  font-family: 'Roboto Mono', monospace;
+
 }
 
-.exhibition-thumb {
-  background: url(http://i2.cdn.cnn.com/cnnnext/dam/assets/160803135630-14-teamlab-super-169.jpg) 50% 50% no-repeat;
-  height: 190px;
+a {
+  color: white;
+
+}
+
+a:hover {
+  color: #876ce4;
 }
 
 .exhibition-img {

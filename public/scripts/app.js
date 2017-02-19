@@ -122,7 +122,7 @@ function renderExhibition(exhibition) {
     <!-- one exhibition -->
     <div class='row exhibition' data-exhibition-id='${exhibition._id}'>
 
-      <div class="col-md-10 col-md-offset-1">
+      <div class="col-md-6 col-md-offset-3">
         <div class="panel-heading">
           <div class="btn-group" role="group" aria-label="...">
             <button type="button" title='delete' class="btn btn-default deleteBtn">
@@ -140,14 +140,10 @@ function renderExhibition(exhibition) {
         <div class="panel-body">
 
           <!-- begin exhibition internal row -->
-            <div class='row'>
-              <div class="col-md-3 col-xs-12 exhibition-thumb centered_div"
-              style="background-image: url("${exhibition.image}")></div>
-
               <div class="col-md-9 col-xs-12">
                 <ul class="list-group">
                   <li class="list-group-item">
-                    <span class='exhibition-title'>${exhibition.title}</span>
+                    <a href='${exhibition.website}'><span class='exhibition-title'>${exhibition.title}</span></a>
                   </li>
 
                   <li class="list-group-item">
@@ -160,10 +156,6 @@ function renderExhibition(exhibition) {
 
                   <li class="list-group-item">
                     <span class='exhibition-dates'>${exhibition.exhibitionDates}</span>
-                  </li>
-
-                  <li class="list-group-item">
-                    <span class='website'>${exhibition.website}</span>
                   </li>
 
                 </ul>
@@ -183,6 +175,5 @@ function renderExhibition(exhibition) {
   $('.deleteBtn').on('click', handleDeleteClick);
   $('.editBtn').on('click', handleEditClick);
   $('.saveBtn').on('click', handleSaveChangesClick);
-  // $('.exhibition-thumb').on('ready', handleThumb);
-  
+
 }
