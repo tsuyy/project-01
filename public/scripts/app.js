@@ -142,7 +142,6 @@ function renderExhibition(exhibition) {
           <!-- begin exhibition internal row -->
             <div class='row'>
               <div class="col-md-3 col-xs-12 thumbnail exhibition-thumb">
-                <img src="http://im.altervista.org/alterpages/img-default.png" alt="exhibition image">
               </div>
 
               <div class="col-md-9 col-xs-12">
@@ -184,6 +183,6 @@ function renderExhibition(exhibition) {
   $('.deleteBtn').on('click', handleDeleteClick);
   $('.editBtn').on('click', handleEditClick);
   $('.saveBtn').on('click', handleSaveChangesClick);
-
+  $('.exhibition-thumb')
 
 }

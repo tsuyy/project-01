@@ -60,9 +60,9 @@ var exhibitionList =[
     location: 'Pola Museum, Ginza JP',
     // description: String,
     exhibitionDates: 'Jul 16 - Aug 31, 2016',
-    website: 'https://random-international.com/'
+    website: 'https://www.team-lab.net/w/crystaluniverse/'
     // images: [ String ]
-    
+
   }
 ];
 

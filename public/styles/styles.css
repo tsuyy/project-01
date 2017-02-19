@@ -24,7 +24,7 @@ body {
   color: #fff;
   border-color: #000;
   font-family: 'Roboto Mono', monospace;
-  font-size: 18px;
+  font-size: 17px;
 }
 
 .form-control {
@@ -35,5 +35,16 @@ body {
 label {
   color: white;
   font-family: 'Roboto Mono', monospace;
+  font-size: 17px;
 
+}
+
+.thumbnail {
+  border-color: #000;
+  border-radius: 0px
+}
+
+.exhibition-thumb {
+  background: url(http://i2.cdn.cnn.com/cnnnext/dam/assets/160803135630-14-teamlab-super-169.jpg) 50% 50% no-repeat;
+  height: 190px;
 }

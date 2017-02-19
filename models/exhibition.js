@@ -7,8 +7,8 @@ var ExhibitionSchema = new Schema({
   location: String,
   // description: String,
   exhibitionDates: String,
-  website: String
-  // images: [ String ],
+  website: String,
+  image: String
   // videoLink : String
 });
 
