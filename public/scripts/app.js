@@ -184,5 +184,5 @@ function renderExhibition(exhibition) {
   $('.editBtn').on('click', handleEditClick);
   $('.saveBtn').on('click', handleSaveChangesClick);
   // $('.exhibition-thumb').on('ready', handleThumb);
-
+  
 }
