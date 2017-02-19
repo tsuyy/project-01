@@ -141,8 +141,8 @@ function renderExhibition(exhibition) {
 
           <!-- begin exhibition internal row -->
             <div class='row'>
-              <div class="col-md-3 col-xs-12 thumbnail exhibition-thumb">
-              </div>
+              <div class="col-md-3 col-xs-12 exhibition-thumb centered_div"
+              style="background-image: url("${exhibition.image}")></div>
 
               <div class="col-md-9 col-xs-12">
                 <ul class="list-group">
@@ -183,6 +183,6 @@ function renderExhibition(exhibition) {
   $('.deleteBtn').on('click', handleDeleteClick);
   $('.editBtn').on('click', handleEditClick);
   $('.saveBtn').on('click', handleSaveChangesClick);
-  $('.exhibition-thumb')
+  // $('.exhibition-thumb').on('ready', handleThumb);
 
 }
