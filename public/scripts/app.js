@@ -124,7 +124,7 @@ function renderExhibition(exhibition) {
 
       <div class="col-md-6 col-md-offset-3">
         <div class="panel-heading">
-          <div class="btn-group" role="group" aria-label="...">
+          <div class="btn-group text-center" role="group" aria-label="...">
             <button type="button" title='delete' class="btn btn-default deleteBtn">
               <span class='glyphicon glyphicon-remove aria-hidden="true'></span>
             </button>

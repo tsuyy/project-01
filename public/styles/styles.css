@@ -19,6 +19,14 @@ body {
   border-color: #000;
 }
 
+.panel-heading {
+  padding-left: 170px;
+}
+
+.panel-body {
+  padding-left: 100px;
+}
+
 .list-group-item {
   background-color: #000;
   color: #fff;
@@ -26,6 +34,7 @@ body {
   font-family: 'Roboto Mono', monospace;
   font-size: 17px;
   padding: 0;
+  text-align: center;
 }
 
 .form-control {
