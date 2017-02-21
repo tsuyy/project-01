@@ -1,5 +1,3 @@
-console.log('SANITY CHECK');
-
 $(document).ready(function() {
 
   $.ajax({
@@ -11,7 +9,6 @@ $(document).ready(function() {
   $('#exhibition-form form').on('submit', function(e) {
     e.preventDefault();
     var formData = $(this).serialize();
-    console.log('formData', formData);
     $.ajax({
       method: 'POST',
       url: '/api/exhibitions',
@@ -42,7 +39,6 @@ function handleDeleteClick(e) {
 // // callback after DELETE /api/exhibitions/:id
 function handleDeleteSuccess(data) {
   var deletedExhibitionId = data._id;
-  console.log('deleting : ', deletedExhibitionId);
   $('div[data-exhibition-id=' + deletedExhibitionId + ']').remove();
 }
 
@@ -50,7 +46,6 @@ function handleDeleteSuccess(data) {
 function handleEditClick(e) {
   var $exhibitionRow = $(this).closest('div.row.exhibition');
   var exhibitionId = $exhibitionRow.data('exhibition-id');
-  console.log('edit exhibition', exhibitionId);
 
   // get exhibition title and replace its field with an input element
   var title = $exhibitionRow.find('span.exhibition-title').text();
@@ -81,7 +76,6 @@ function handleEditClick(e) {
 
 // after editing an exhibition, when the save changes button is clicked
 function handleSaveChangesClick(e) {
-  console.log("e is",e.target);
   var exhibitionId = $('.saveBtn').closest('div.row.exhibition').data('exhibition-id');
   var $exhibitionRow = $('[data-exhibition-id=' + exhibitionId + ']');
 
@@ -94,8 +88,6 @@ function handleSaveChangesClick(e) {
 
   };
 
-  console.log('PUTing data for exhibition', exhibitionId, 'with data', data);
-
   $.ajax({
     method: 'PUT',
     url: '/api/exhibitions/' + exhibitionId,
@@ -105,7 +97,6 @@ function handleSaveChangesClick(e) {
 }
 
 function handleUpdatedResponse(data) {
-  console.log('response to update', data);
 
   var exhibitionId = data._id;
   $('[data-exhibition-id=' + exhibitionId + ']').remove();
@@ -115,7 +106,6 @@ function handleUpdatedResponse(data) {
 
 // this function takes one exhibition and renders it to the page
 function renderExhibition(exhibition) {
-  console.log('rendering exhibition', exhibition);
 
   var exhibitionHtml = (`
 

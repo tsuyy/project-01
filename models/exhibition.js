@@ -6,7 +6,7 @@ var ExhibitionSchema = new Schema({
   artistName: String,
   location: String,
   exhibitionDates: String,
-  website: String,
+  website: String
 });
 
 var Exhibition = mongoose.model('Exhibition', ExhibitionSchema);
