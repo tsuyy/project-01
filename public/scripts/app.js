@@ -112,6 +112,12 @@ function renderExhibition(exhibition) {
     <!-- one exhibition -->
     <div class='row exhibition' data-exhibition-id='${exhibition._id}'>
 
+    <!-- begin exhibition internal row -->
+     <div class='row'>
+       <div class="col-md-3 col-xs-12 thumbnail exhibition-thumb">
+          <img src="${exhibition.image}">
+       </div>
+
       <div class="col-md-6 col-md-offset-3">
         <div class="panel-heading">
           <div class="btn-group text-center" role="group" aria-label="...">

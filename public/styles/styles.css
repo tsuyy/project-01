@@ -71,3 +71,8 @@ a:hover {
 .add-button {
   padding-left: 270px;
 }
+
+.exhibition-thumb {
+  width: 250px;
+  height: 250px;
+}
